@@ -32,7 +32,7 @@ async function start(){
   }
 
   // renderers
-  const app = initPixiApp('#pixi');
+  const app = await initPixiApp('#pixi');
   const { graphicsMask, updatePose } = initSilhouette(app, level.figure.silhouette);
   const { updateWords } = initWordBody(app, graphicsMask, level.figure.affirmations, level.figure.conversions);
   const overlay = initThreeOverlay('#three');
