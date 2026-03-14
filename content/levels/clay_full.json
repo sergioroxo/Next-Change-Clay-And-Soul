@@ -1,0 +1,48 @@
+{
+  "id": "clay_full",
+  "title": "Clay and Soul — Full",
+  "bpm": 118,
+  "audio": {
+    "sources": [
+      {"src":"./assets/music/clay_full.ogg","type":"audio/ogg"},
+      {"src":"./assets/music/Clay and Soul Sonauto.mp3","type":"audio/mpeg"}
+    ],
+    "songOffsetMs": 160
+  },
+  "mechanic": {"type":"timed-affirmation","beatWindowMs":180},
+  "environment": {
+    "skin": "clay",
+    "palette": ["#ff1ec8","#ffd36e","#0b0b12"],
+    "filters": {
+      "pixelate": [[0,1],[40,3],[80,6]],
+      "saturation": [[0,1.0],[60,0.4],[90,0.2]]
+    }
+  },
+  "figure": {
+    "mode": "pixi_text_mask",
+    "silhouette": {
+      "keyframes": [
+        {"t":0.0,"pose":"arms_up"},
+        {"t":2.6,"pose":"right_reach"},
+        {"t":5.2,"pose":"left_reach"},
+        {"t":7.8,"pose":"arms_up"}
+      ]
+    },
+    "affirmations": ["belonging","care","community","solidarity","chosen","safety","joy","listen","presence","gentle"],
+    "conversions":  ["return","correct","purity","obedience","old name","align","repent","submit","deny","erase"]
+  },
+  "lexicon": [
+    {"token":"old name","weight":1.0},
+    {"token":"turn back","weight":0.8},
+    {"token":"wash the clay","weight":0.9}
+  ],
+  "captions": [
+    {"at":3.00,"text":"look at your hands"},
+    {"at":9.00,"text":"heavy water"},
+    {"at":15.00,"text":"woven in a secret place"},
+    {"at":21.00,"text":"your old name"}
+  ],
+  "overlays": [
+    {"at":6.00,"text":"Notice the shift from care to correction"}
+  ]
+}
