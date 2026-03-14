@@ -8,8 +8,11 @@ const $ = sel => document.querySelector(sel);
 let state = { running:false, voidMeter:0, bpm:120, beatWindowMs:180, songOffsetMs:0, activeTokens: new Set() };
 
 async function loadLevel(url){
-  const res = await fetch(url);
-  return await res.json();
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) {
+    const msg = `Failed to load ${url} — HTTP ${res.status}`;
+    console.error(msg);
+    throw new Error(msg);
 }
 function uiShow(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.add('hidden'));
