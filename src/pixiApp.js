@@ -1,7 +1,9 @@
-export function initPixiApp(canvasSel){
+export async function initPixiApp(canvasSel){
   const view = document.querySelector(canvasSel);
   const app = new PIXI.Application();
-  app.init({ view, backgroundAlpha:0, antialias:true, resizeTo: view.parentElement });
+
+  // Pixi v8 initialisation is async
+  await app.init({ view, backgroundAlpha:0, antialias:true, resizeTo: view.parentElement });
 
   // soft spotlights (Clay palette)
   const g = new PIXI.Graphics();
@@ -14,3 +16,4 @@ export function initPixiApp(canvasSel){
 
   return app;
 }
+``
